@@ -1,131 +1,84 @@
-:root {
-  --bg: #0f172a;
-  --text: #ffffff;
-  --primary: #3b82f6;
-}
+// Typing Animation
+const words = ["Web Developer", "Designer", "Freelancer"];
+let i = 0, j = 0, current = "", deleting = false;
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+function type() {
+  current = words[i];
+  document.getElementById("typing").textContent = current.substring(0, j);
 
-/* Sections */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
+  if (!deleting && j < current.length) j++;
+  else if (deleting && j > 0) j--;
 
-/* Navbar */
-nav {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  backdrop-filter: blur(10px);
-}
+  if (j === current.length) deleting = true;
+  if (j === 0) {
+    deleting = false;
+    i = (i + 1) % words.length;
+  }
 
-/* Buttons */
-.btn {
-  padding: 10px 20px;
-  background: var(--primary);
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+  setTimeout(type, 100);
 }
-.btn:hover {
-  transform: scale(1.1);
-}
+type();
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
 
-/* Skills */
-.skill {
-  padding: 10px;
-  background: #1e293b;
-}
+// PROJECTS (EDIT HERE)
+const projects = [
+  {
+    title: "Portfolio Website",
+    desc: "My personal portfolio",
+    tech: "HTML, CSS, JS",
+    image: "assets/images/project1.png",
+    github: "#",
+    live: "#"
+  }
+];
 
-/* Cards */
-.card {
-  padding: 20px;
-  background: #1e293b;
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-10px);
-}
+const container = document.getElementById("project-container");
 
-/* Images */
-.profile-img {
-  width: 150px;
-  border-radius: 50%;
-  margin-top: 20px;
-}
+projects.forEach(p => {
+  container.innerHTML += `
+    <div class="card">
+      <img src="${p.image}" class="project-img">
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      <small>${p.tech}</small><br>
+      <a href="${p.github}">GitHub</a> |
+      <a href="${p.live}">Live</a>
+    </div>
+  `;
+});
 
-.project-img {
-  width: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-}
 
-.cert {
-  width: 100%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.cert:hover {
-  transform: scale(1.05);
-}
+// Scroll Progress + Top Button
+window.onscroll = () => {
+  let scroll = document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-/* Progress Bar */
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background: var(--primary);
-  width: 0%;
-}
+  document.getElementById("progress-bar").style.width =
+    (scroll / height) * 100 + "%";
 
-/* Scroll Top */
-#topBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-}
+  document.getElementById("topBtn").style.display =
+    scroll > 300 ? "block" : "none";
+};
 
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-}
+document.getElementById("topBtn").onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
-.modal-content {
-  display: block;
-  margin: auto;
-  width: 80%;
-  max-width: 700px;
-  margin-top: 80px;
-}
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
+// IMAGE MODAL
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("cert") || e.target.classList.contains("project-img")) {
+    modal.style.display = "block";
+    modalImg.src = e.target.src;
+  }
+});
+
+closeBtn.onclick = () => modal.style.display = "none";
+
+modal.onclick = (e) => {
+  if (e.target === modal) modal.style.display = "none";
+};
