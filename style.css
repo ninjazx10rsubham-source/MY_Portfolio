@@ -36,7 +36,6 @@ nav {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .btn:hover {
   transform: scale(1.1);
 }
@@ -60,9 +59,30 @@ nav {
   background: #1e293b;
   transition: 0.3s;
 }
-
 .card:hover {
   transform: translateY(-10px);
+}
+
+/* Images */
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cert {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cert:hover {
+  transform: scale(1.05);
 }
 
 /* Progress Bar */
@@ -81,4 +101,31 @@ nav {
   bottom: 20px;
   right: 20px;
   display: none;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 700px;
+  margin-top: 80px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
 }
