@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <h2>YourName</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#uploads">Uploads</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button id="theme-toggle">🌙</button>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="section hero">
+  <h1>Your Name</h1>
+  <h2><span id="typing"></span></h2>
+  <p>Edit your intro here</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>Your bio here</p>
+
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JS</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div id="project-container" class="grid"></div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" class="section">
+  <h2>Certificates</h2>
+  <div class="grid">
+    <img src="assets/certificates/sample.jpg" class="cert">
+  </div>
+</section>
+
+<!-- UPLOADS -->
+<section id="uploads" class="section">
+  <h2>Uploads</h2>
+  <div id="upload-container" class="grid"></div>
+</section>
+
+<!-- RESUME -->
+<section class="section">
+  <h2>Resume</h2>
+  <a href="assets/uploads/resume.pdf" download class="btn">Download Resume</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Your Name</p>
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
