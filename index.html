@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name | Portfolio</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- Progress Bar -->
 <div id="progress-bar"></div>
 
 <!-- NAVBAR -->
@@ -32,18 +32,20 @@
 <section id="home" class="section hero">
   <h1>Your Name</h1>
   <h2><span id="typing"></span></h2>
-  <p>Edit your intro here</p>
+  <p>Your intro here</p>
+
+  <img src="assets/images/profile.png" class="profile-img">
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
-  <h2>About</h2>
-  <p>Your bio here</p>
+  <h2>About Me</h2>
+  <p>Edit your bio here</p>
 
   <div class="skills">
     <div class="skill">HTML</div>
     <div class="skill">CSS</div>
-    <div class="skill">JS</div>
+    <div class="skill">JavaScript</div>
   </div>
 </section>
 
@@ -89,6 +91,12 @@
 </footer>
 
 <button id="topBtn">↑</button>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 
 <script src="script.js"></script>
 </body>
