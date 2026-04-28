@@ -11,34 +11,35 @@
 
 <body>
 
-<!-- Progress Bar -->
 <div id="progress-bar"></div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
   <h2>YourName</h2>
+
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#uploads">Uploads</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
   <button id="theme-toggle">🌙</button>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="section hero">
+<section id="home" class="section reveal">
   <h1>Your Name</h1>
   <h2><span id="typing"></span></h2>
   <p>Your intro here</p>
 
-  <img src="assets/images/profile.png" class="profile-img">
+  <div class="cta">
+    <a href="#projects" class="btn">View Work</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section reveal">
   <h2>About Me</h2>
   <p>Edit your bio here</p>
 
@@ -50,33 +51,21 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="projects" class="section reveal">
   <h2>Projects</h2>
+
+  <!-- FILTER -->
+  <div class="filters">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('web')">Web</button>
+    <button onclick="filterProjects('app')">App</button>
+  </div>
+
   <div id="project-container" class="grid"></div>
 </section>
 
-<!-- CERTIFICATES -->
-<section id="certificates" class="section">
-  <h2>Certificates</h2>
-  <div class="grid">
-    <img src="assets/certificates/sample.jpg" class="cert">
-  </div>
-</section>
-
-<!-- UPLOADS -->
-<section id="uploads" class="section">
-  <h2>Uploads</h2>
-  <div id="upload-container" class="grid"></div>
-</section>
-
-<!-- RESUME -->
-<section class="section">
-  <h2>Resume</h2>
-  <a href="assets/uploads/resume.pdf" download class="btn">Download Resume</a>
-</section>
-
 <!-- CONTACT -->
-<section id="contact" class="section">
+<section id="contact" class="section reveal">
   <h2>Contact</h2>
   <form>
     <input type="text" placeholder="Name" required>
@@ -91,12 +80,6 @@
 </footer>
 
 <button id="topBtn">↑</button>
-
-<!-- IMAGE MODAL -->
-<div id="imageModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
 
 <script src="script.js"></script>
 </body>
